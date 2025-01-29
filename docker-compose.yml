@@ -1,0 +1,40 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  crawler:
+    image: quantum-crawler:latest
+    deploy:
+      replicas: 10
+      resources:
+        limits:
+          cpus: '4'
+          memory: 8G
+    configs:
+      - source: crawler_config
+        target: /app/config.yaml
+
+  ai-engine:
+    image: tensorflow-serving:latest
+    ports:
+      - "8501:8501"
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+
+  elasticsearch:
+    image: elasticsearch:8.4.1
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms4g -Xmx4g
+
+  kafka:
+    image: bitnami/kafka:3.2
+    ports:
+      - "9092:9092"
+
+  prometheus:
+    image: prom/prometheus:latest
+    ports:
+      - "9090:9090"
