@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:7.0-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - quantum-net
+
+  elasticsearch:
+    image: elasticsearch:8.4.1
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms4g -Xmx4g
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - quantum-net
+    ports:
+      - "9200:9200"
+
+  crawler:
+    build:
+      context: ..
+      dockerfile: docker/crawler.Dockerfile
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - ELASTICSEARCH_HOST=elasticsearch
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - quantum-net
+    depends_on:
+      - redis
+      - elasticsearch
+
+  ai-engine:
+    build:
+      context: ..
+      dockerfile: docker/ai-engine.Dockerfile
+    runtime: nvidia
+    networks:
+      - quantum-net
+    environment:
+      - MODEL_CACHE_SIZE=2GB
+
+  worker:
+    build:
+      context: ..
+      dockerfile: docker/worker.Dockerfile
+    scale: 10
+    networks:
+      - quantum-net
+    depends_on:
+      - redis
+
+volumes:
+  redis_data:
+  es_data:
+
+networks:
+  quantum-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.28.0.0/16
