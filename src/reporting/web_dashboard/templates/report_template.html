@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Security Audit Report</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css">
+</head>
+<body>
+    <h1>Scan Results: {{ metadata.target_url }}</h1>
+    
+    <div id="risk-summary">
+        <div class="risk-score">{{ risk_score }}</div>
+        <div class="risk-breakdown">
+            <canvas id="severityChart"></canvas>
+        </div>
+    </div>
+
+    <table id="findingsTable" class="display">
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>File Type</th>
+                <th>Sensitive Data</th>
+                <th>Severity</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for finding in findings %}
+            <tr class="severity-{{ finding.severity_level }}">
+                <td>{{ finding.url }}</td>
+                <td>{{ finding.file_type }}</td>
+                <td>
+                    <ul>
+                        {% for type, count in finding.matches.items() %}
+                        <li>{{ type }}: {{ count }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ finding.severity }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#findingsTable').DataTable({
+                paging: true,
+                pageLength: 50,
+                order: [[3, 'desc']]
+            });
+        });
+    </script>
+</body>
+</html>
