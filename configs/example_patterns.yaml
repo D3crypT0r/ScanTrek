@@ -1,0 +1,17 @@
+- name: "internal_credentials"
+  description: "Company-specific credential format"
+  regex: "creds-[a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12}"
+  confidence: 0.95
+  context: ["login", "auth", "password"]
+
+- name: "payment_card"
+  description: "PCI compliant card numbers"
+  regex: "\b(?:\d[ -]*?){13,16}\b"
+  confidence: 0.85
+  context: ["card", "payment", "ccv"]
+
+- name: "jwt_token"
+  description: "JSON Web Tokens"
+  regex: "eyJ[a-zA-Z0-9-_=]+\.eyJ[a-zA-Z0-9-_=]+\.?[a-zA-Z0-9-_.+/=]*"
+  confidence: 0.90
+  context: ["bearer", "authorization", "token"]
