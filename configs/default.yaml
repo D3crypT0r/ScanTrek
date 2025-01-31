@@ -1,0 +1,35 @@
+crawler:
+  user_agent: "QuantumCrawler/2.0 (+https://github.com/D3crypT0r/ScanTrek)"
+  request_timeout: 15
+  max_depth: 5
+  max_pages: 1000
+  politeness_delay: 1.5
+  parallel_workers: 10
+
+analysis:
+  file_types:
+    documents: [pdf, doc, docx, xls, xlsx]
+    archives: [zip, rar, 7z, tar.gz]
+    code: [js, py, java, config, env]
+  sensitivity_threshold: 0.75
+  max_file_size_mb: 25
+
+stealth:
+  proxy_rotation_interval: 300
+  user_agents_pool: "config/user_agents.txt"
+  tls_fingerprints: "config/tls_profiles.json"
+  headless_browser: "chrome"
+
+reporting:
+  formats: [json, csv, html]
+  redaction:
+    enabled: true
+    placeholder: "[REDACTED]"
+  compression_level: 6
+
+integrations:
+  virustotal:
+    api_key: ${VIRUSTOTAL_API_KEY}
+  shodan:
+    api_key: ${SHODAN_API_KEY}
+  webarchive: true
