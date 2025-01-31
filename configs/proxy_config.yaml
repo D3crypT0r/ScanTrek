@@ -1,0 +1,25 @@
+providers:
+  tor:
+    enabled: true
+    nodes: 3
+    control_port: 9051
+    refresh_interval: 600
+
+  commercial:
+    - provider: "brightdata"
+      endpoint: "zproxy.lum-superproxy.io"
+      port: 22225
+      auth: "${PROXY_USER}:${PROXY_PASS}"
+    
+    - provider: "oxylabs"
+      endpoint: "pr.oxylabs.io"
+      port: 7777
+      auth: "${PROXY_USER}:${PROXY_PASS}"
+
+  public:
+    sources:
+      - "https://free-proxy-list.net/"
+      - "https://www.sslproxies.org/"
+    refresh_interval: 3600
+    min_uptime: 90
+    allowed_types: [http, https, socks5]
