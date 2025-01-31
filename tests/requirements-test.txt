@@ -1,0 +1,9 @@
+pytest==7.4.0
+pytest-mock==3.11.1
+requests-mock==1.11.0
+freezegun==1.2.2
+fakeredis==2.18.1
+PyPDF2==3.0.1
+pytest-cov==4.1.0
+pytest-xdist==3.3.1
+faker==19.6.2
