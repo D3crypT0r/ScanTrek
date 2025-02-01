@@ -239,4 +239,5 @@ GNU Affero General Public License v3.0
 
 ```
 
-![image](https://github.com/user-attachments/assets/776be197-3334-4a80-bc3d-30d8a9fe31c1)
+
+![image](https://github.com/user-attachments/assets/7e8e08b7-4246-48a0-ac74-9844feb9681e)
