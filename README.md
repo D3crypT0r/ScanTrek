@@ -48,7 +48,7 @@ docker pull ScanTrek/core:latest
 git clone https://github.com/D3crypT0r/ScanTrek
 python setup.py install
 
-## <a name="overview"></a>1. Overview
+###<aname="overview"> </a> 1. Overview
 
 ### What is ScanTrek?
 An AI-powered web reconnaissance framework for identifying sensitive data exposure across web assets.
@@ -62,7 +62,7 @@ An AI-powered web reconnaissance framework for identifying sensitive data exposu
 
 ---
 
-## <a name="installation"></a>2. Installation
+## <a name="installation"> </a> 2. Installation
 
 ### Requirements
 - Python 3.9+
@@ -120,14 +120,14 @@ reporting:
 ### CLI Commands
 ```bash
 # Basic scan
-quantum-crawl -t https://example.com -o ./results
+ScanTrek -t https://example.com -o ./results
 
 # Distributed mode
-quantum-worker --role crawler --nodes 5
-quantum-crawl -t https://example.com --distributed
+ScanTrek --role crawler --nodes 5
+ScanTrek -t https://example.com --distributed
 
 # Custom patterns
-quantum-crawl --patterns custom-rules.yaml
+ScanTrek --patterns custom-rules.yaml
 ```
 
 ### Common Options
