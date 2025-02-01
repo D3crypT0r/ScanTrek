@@ -1,21 +1,8 @@
 # ScanTrek Documentation
 
-## Table of Contents
-1. [Overview](#overview)
-2. [Installation](#installation)
-3. [Configuration](#configuration)
-4. [Usage](#usage)
-5. [Architecture](#architecture)
-6. [Security](#security)
-7. [API Reference](#api-reference)
-8. [Examples](#examples)
-9. [Troubleshooting](#troubleshooting)
-10. [Contributing](#contributing)
-11. [License](#license)
 
----
 
-## <a name="overview"></a>1. Overview
+## 1. Overview
 
 ### What is ScanTrek?
 An AI-powered web reconnaissance framework for identifying sensitive data exposure across web assets.
@@ -29,7 +16,7 @@ An AI-powered web reconnaissance framework for identifying sensitive data exposu
 
 ---
 
-## <a name="installation"></a>2. Installation
+## 2. Installation
 
 ### Requirements
 - Python 3.9+
@@ -48,7 +35,7 @@ docker pull ScanTrek/core:latest
 git clone https://github.com/D3crypT0r/ScanTrek
 python setup.py install
 
-###<aname="overview"> </a> 1. Overview
+##  1.Overview
 
 ### What is ScanTrek?
 An AI-powered web reconnaissance framework for identifying sensitive data exposure across web assets.
@@ -62,7 +49,7 @@ An AI-powered web reconnaissance framework for identifying sensitive data exposu
 
 ---
 
-## <a name="installation"> </a> 2. Installation
+## 3. Installation
 
 ### Requirements
 - Python 3.9+
@@ -84,7 +71,7 @@ python setup.py install
 
 ---
 
-## <a name="configuration"></a>3. Configuration
+## 4. Configuration
 
 ### Core Settings (`config.yaml`)
 ```yaml
@@ -115,7 +102,7 @@ reporting:
 
 ---
 
-## <a name="usage"></a>4. Usage
+## 5. Usage
 
 ### CLI Commands
 ```bash
@@ -140,7 +127,7 @@ ScanTrek --patterns custom-rules.yaml
 ```
 
 ---
-## <a name="architecture"></a>5. Architecture
+## 6. Architecture
 
 ```mermaid
 graph TD
@@ -159,7 +146,7 @@ graph TD
 
 ---
 
-## <a name="security"></a>6. Security
+## 7. Security
 
 ### Protocols
 - AES-256 encrypted storage
@@ -169,7 +156,7 @@ graph TD
 
 ---
 
-## <a name="api-reference"></a>7. API Reference
+## 8. API Reference
 
 ### Core Classes
 ```python
@@ -190,7 +177,7 @@ POST /api/v1/patterns
 
 ---
 
-## <a name="examples"></a>8. Examples
+## 9. Examples
 
 ### Basic Scan
 ```bash
@@ -216,7 +203,7 @@ spec:
 
 ---
 
-## <a name="troubleshooting"></a>9. Troubleshooting
+## 10. Troubleshooting
 
 **Issue**: Blocked by WAF
 - ✅ Enable stealth mode
@@ -230,7 +217,7 @@ spec:
 
 ---
 
-## <a name="contributing"></a>10. Contributing
+## 11. Contributing
 
 1. Fork the repository
 2. Create feature branch
