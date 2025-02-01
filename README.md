@@ -17,7 +17,7 @@
 
 ## <a name="overview"></a>1. Overview
 
-### What is QuantumCrawler?
+### What is ScanTrek?
 An AI-powered web reconnaissance framework for identifying sensitive data exposure across web assets.
 
 **Key Features**:
@@ -39,18 +39,18 @@ An AI-powered web reconnaissance framework for identifying sensitive data exposu
 ### Methods
 ```bash
 # PyPI Install
-pip install quantum-crawler
+pip install ScanTrek
 
 # Docker
-docker pull quantumcrawler/core:latest
+docker pull ScanTrek/core:latest
 
 # Source Build
-git clone https://github.com/yourorg/quantum-crawler
+git clone https://github.com/D3crypT0r/ScanTrek
 python setup.py install
 
 ## <a name="overview"></a>1. Overview
 
-### What is QuantumCrawler?
+### What is ScanTrek?
 An AI-powered web reconnaissance framework for identifying sensitive data exposure across web assets.
 
 **Key Features**:
@@ -72,13 +72,13 @@ An AI-powered web reconnaissance framework for identifying sensitive data exposu
 ### Methods
 ```bash
 # PyPI Install
-pip install quantum-crawler
+pip install ScanTrek
 
 # Docker
-docker pull quantumcrawler/core:latest
+docker pull ScanTrek/core:latest
 
 # Source Build
-git clone https://github.com/yourorg/quantum-crawler
+git clone https://github.com/D3crypT0r/ScanTrek
 python setup.py install
 ```
 
