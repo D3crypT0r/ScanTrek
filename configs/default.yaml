@@ -1,5 +1,5 @@
 crawler:
-  user_agent: "QuantumCrawler/2.0 (+https://github.com/D3crypT0r/ScanTrek)"
+  user_agent: "ScanTrek/2.0 (+https://github.com/D3crypT0r/ScanTrek)"
   request_timeout: 15
   max_depth: 5
   max_pages: 1000
